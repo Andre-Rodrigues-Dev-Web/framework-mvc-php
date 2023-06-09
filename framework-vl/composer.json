@@ -1,0 +1,21 @@
+{
+    "name": "andre/framework-vl",
+    "description": "framework php",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app"
+        }
+    },
+    "authors": [
+        {
+            "name": "André Rodrigues",
+            "email": "79713707+Andre-Rodrigues-Dev-Web@users.noreply.github.com"
+        }
+    ],
+    "require": {},
+    "config": {
+        "platform": {
+            "php": "^8.1"
+        }
+    }
+}
