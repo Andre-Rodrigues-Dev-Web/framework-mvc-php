@@ -1,23 +1,15 @@
 <?php
-
 namespace App\Controllers;
+use App\Models\HomeModel;
+class HomeController{
+    private $model;
 
-class HomeController
-{
-    public function index()
-    {
-        // Aqui você pode adicionar a lógica para exibir a página inicial
-        $this->render('home');
+    public function __construct($db){
+        $this->model = new HomeModel($db);
     }
 
-    protected function render($view)
-    {
-        $viewPath = '../views/' . $view . '.php';
-        
-        if (file_exists($viewPath)) {
-            include $viewPath;
-        } else {
-            echo 'View not found: ' . $view;
-        }
+    public function index(){
+        $noticias = $this->model->getNoticias();
+        include 'app/views/home.php';
     }
 }
