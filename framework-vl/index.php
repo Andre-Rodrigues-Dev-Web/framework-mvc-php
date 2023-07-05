@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'vendor/autoload.php';
 $db = require_once 'conn/db.php';
 
@@ -13,6 +14,7 @@ use App\Controllers\ContatoController;
 use App\Controllers\LoginController;
 use App\Controllers\DashboardController;
 use App\Controllers\LogoutController;
+
 function includeView($name)
 {
     $file = __DIR__ . '/app/includes/' . $name . '.php';
@@ -23,7 +25,6 @@ function includeView($name)
     }
 }
 
-session_start();
 
 $url = isset($_GET['url']) ? $_GET['url'] : 'home';
 $rotas = [
